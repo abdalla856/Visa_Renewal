@@ -1,6 +1,7 @@
 import React ,{ useContext , useState , useEffect } from "react";
 import './Login.css'
 import { anime } from 'react-anime';
+import { Link } from "react-router-dom";
 // import Card from '../view/shared/components/UIElements/Card'
 import Input from '../view/shared/components/FormElements/Input'
 // import leftBox from "./Login/left side/components/leftBox";
@@ -20,7 +21,7 @@ const auth = useContext(authCotext)
 
   useEffect(()=>{if(auth.login(userInfo.matricNo , userInfo.password) ){
     auth.isLoggedIn=true;}
-    console.log(auth.isLoggedIn)
+    // console.log(auth.isLoggedIn)
   },
   [userInfo]
   )
@@ -89,9 +90,15 @@ const passAnimation =()=>{
         const checkIsLoggedIn=()=>{
           if(!auth.isLoggedIn){
             setcheckLoggedIn(false)
-          }else 
-          setcheckLoggedIn(true)
+          console.log("hiii")
+          console.log(auth.isLoggedIn)
 
+          }else {
+          setcheckLoggedIn(true)
+          console.log("hi")
+          console.log(auth.isLoggedIn)
+
+        }
         }
 return (
 <div classNameName="page">
@@ -140,9 +147,12 @@ return (
         <input type="password" id="password" onFocus={passAnimation}
         onChange={e=>{setUserInfo({...userInfo , password:e.target.value})}}
         ></input>
-        <input type="submit" id="submit" value="Login" onFocus={submitAnimation}
-        onClick={checkIsLoggedIn}
-         ></input>
+       <Link to ={auth.isLoggedIn ? '/user' : '/'}><input type="submit" id="submit" value="Login" onFocus={submitAnimation}
+        onClick={checkIsLoggedIn} 
+         >
+
+        </input>
+         </Link> 
       </form>
     </div>
   </div>

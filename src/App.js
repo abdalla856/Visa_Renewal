@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Login from './view/Login';
-
+import Dashboard from './view/students/Dashboard/Dashboard';
 import {
   BrowserRouter as Router,
   Route,
@@ -11,6 +11,7 @@ import {
 function App() {
   return (
     <Router>
+      
     <main>
        <Switch>
     
@@ -18,6 +19,10 @@ function App() {
           <Route path="/" exact>
            
                 <Login/>
+          </Route>
+          <Route path="/user" exact>
+           
+                <Dashboard/>
           </Route>
        <Redirect to="/" />
       </Switch>
