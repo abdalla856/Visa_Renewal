@@ -52,6 +52,7 @@
   top: 20px;
   position: relative;
   width: 70%;
+  
 }
 @media (max-width: 767px) {
   .left_visa_apply {
@@ -67,15 +68,15 @@
   margin: 10px 40px 10px;
 }
 .eula_visa_apply {
-  color: #999;
+  color: #707070;
   font-size: 14px;
   line-height: 1.5;
   margin: 10px;
-  margin-left: 30px;
+  margin-left: 40px;
   border-radius: 0px;
 }
 .right_visa_apply {
-  background: #474A59;
+  background: #273da8;
   box-shadow: 0px 0px 40px 16px rgba(0,0,0,0.22);
   color: #F1F1F2;
   position: relative;
@@ -105,7 +106,7 @@ label {
 }
 
  .submit {
-  color: #707075;
+  color:  #a1a1a7;;
   margin-top: 70px;
   transition: color 300ms;
   background-color: transparent;
@@ -118,17 +119,17 @@ height: 50px;
 
 
 .submit:hover {
-  color: #d0d0d2;
+  color: #f8f8f8;
   transition: color 300ms;
 
   border:3px solid maroon;
   border-radius:9px ;
 }
 .visa__text{
-    margin-left: 70px;
+    margin-right: 80px;
     text-align: center;
     display: flex;
-    flex-direction:row ;
+    /* flex-direction:row ; */
     justify-content: center;
 }
 
@@ -138,5 +139,6 @@ ul.visa__doc{
         display: flex;
         flex-direction: column ;
         box-shadow: none;
+        color :#707070
      
 }

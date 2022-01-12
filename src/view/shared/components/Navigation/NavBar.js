@@ -13,13 +13,13 @@ const NavBar = () => {
         </div>
         <div className="right_container">
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/user">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/">Visa Application</NavLink>
+            <NavLink to="/visaApplication">Visa Application</NavLink>
           </li>
           <li>
-            <NavLink to="/">ikad Application</NavLink>
+            <NavLink to="/ikadApplication">ikad Application</NavLink>
           </li>
           <li>
             <NavLink to="/">Logout</NavLink>

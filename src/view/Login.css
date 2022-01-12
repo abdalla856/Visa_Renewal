@@ -121,9 +121,10 @@ input::-moz-focus-inner {
   border: 0; 
 }
 #submit {
-  color: #707075;
+  color: #c1c1cd;
   margin-top: 40px;
   transition: color 300ms;
+  padding-right: 9px;
  
 }
 #submit:focus {
@@ -136,4 +137,7 @@ input::-moz-focus-inner {
   text-align: center;
   color :red;
   font-size: 15px;
+}
+.login__form{
+  background-color:transparent !important;
 }

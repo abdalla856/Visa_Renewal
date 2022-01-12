@@ -12,12 +12,13 @@ import {
 const Footer = () => {
  return (
     <Box>
-      <h1 style={{ color:"#8E8E9A", 
+      <h5 style={{ color:"#8E8E9A", 
                    textAlign: "left", 
-                   marginTop: "-50px" }}>
+                   marginTop: "-50px" ,
+                   height:"30px"}}>
         Visa Renewal System 
-      </h1>
-      <Container>
+      </h5>
+      <Container >
         <Row>
           <Column>
             <Heading>About Us</Heading>
@@ -62,16 +63,10 @@ const Footer = () => {
                 </span>
               </i>
             </FooterLink>
-            <FooterLink href="#">
-              <i className="fab fa-youtube">
-                <span style={{ marginLeft: "10px" }}>
-                  LinkedIn
-                </span>
-              </i>
-            </FooterLink>
+
           </Column>
         </Row>
-        <span style={{textAlign:"right"}}>CopyRight Abdalla7dad &copy;2021</span>
+        <h6 style={{textAlign:"right"}}>CopyRight Abdalla7dad &copy;2021</h6>
       </Container>
     </Box>
  
