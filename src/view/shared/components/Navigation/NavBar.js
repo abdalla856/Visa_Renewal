@@ -22,6 +22,9 @@ const NavBar = () => {
             <NavLink to="/ikadApplication">ikad Application</NavLink>
           </li>
           <li>
+            <NavLink to="/progress">Progess</NavLink>
+          </li>
+          <li>
             <NavLink to="/">Logout</NavLink>
           </li>
         </div>

@@ -84,8 +84,8 @@ const Dashboard = () => {
         </Swiper>
       </div>
 {/* visa application part */}
-< VisaApply kind ={'Visa'}/>
-< VisaApply kind ={"i-kad"}/>
+< VisaApply kind ={'Visa'} link ={"/visaApplication"}/>
+< VisaApply kind ={"i-kad"} link={"/ikadApplication"}/>
  <Footer/>
     </React.Fragment>
   );

@@ -24,7 +24,7 @@ const VisaApply = props => {
         <div className="right_visa_apply">
           <form className="dashboard_form">
             <h5 className="visa__text">{props.kind} Application</h5>
-            <Link to={"/user"}>
+            <Link to={props.link}>
               <button className="submit">Apply now</button>
             </Link>
           </form>
