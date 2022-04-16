@@ -1,22 +1,21 @@
-@import url('https://rsms.me/inter/inter-ui.css');
+@import url("https://rsms.me/inter/inter-ui.css");
 ::selection {
-  background: #2D2F36;
+  background: #2d2f36;
 }
 ::-webkit-selection {
-  background: #2D2F36;
+  background: #2d2f36;
 }
 ::-moz-selection {
-  background: #2D2F36;
+  background: #2d2f36;
 }
 .page_visa_apply {
-  background: rgba(0,0,0,0.15);
-  font-family: 'Inter UI', sans-serif;
+  background: rgba(0, 0, 0, 0.15);
+  font-family: "Inter UI", sans-serif;
   margin: 0;
   padding: 20px;
   width: 100px;
 }
 .page_visa_apply {
-   
   background: hsl(240, 5%, 89%);
   display: flex;
   flex-direction: column;
@@ -52,7 +51,6 @@
   top: 20px;
   position: relative;
   width: 70%;
-  
 }
 @media (max-width: 767px) {
   .left_visa_apply {
@@ -77,8 +75,8 @@
 }
 .right_visa_apply {
   background: #273da8;
-  box-shadow: 0px 0px 40px 16px rgba(0,0,0,0.22);
-  color: #F1F1F2;
+  box-shadow: 0px 0px 40px 16px rgba(0, 0, 0, 0.22);
+  color: #f1f1f2;
   position: relative;
   width: 60%;
 }
@@ -91,13 +89,12 @@
   }
 }
 
-
 form {
   margin: 40px;
   position: absolute;
 }
 label {
-  color:  #c2c2c5;
+  color: #c2c2c5;
   display: block;
   font-size: 14px;
   height: 16px;
@@ -105,40 +102,46 @@ label {
   margin-bottom: 5px;
 }
 
- .submit {
-  color:  #a1a1a7;;
-  margin-top: 70px;
+.submit {
+  color: blue;
   transition: color 300ms;
-  background-color: transparent;
+  background-color: white;
   border-color: transparent;
-margin-left:90px;
-width:150px;
-height: 50px;
- 
-} 
 
+  font-family: sans-serif;
+  font-weight: 400;
+  text-align: center;
+  width: 150px;
+  height: 50px;
+}
 
 .submit:hover {
-  color: #f8f8f8;
-  transition: color 300ms;
-
-  border:3px solid maroon;
-  border-radius:9px ;
+  color: white;
+  transition: border 300ms;
+  background-color: #273da8;
+  border: 3px solid white;
+  /* border-radius: 9px; */
 }
-.visa__text{
-    margin-right: 80px;
-    text-align: center;
-    display: flex;
-    /* flex-direction:row ; */
-    justify-content: center;
+.visa__text {
+  margin-right: 80px;
+  text-align: center;
+  display: flex;
+  /* flex-direction:row ; */
+  justify-content: center;
 }
 
-ul.visa__doc{
-   
-        list-style-type: square;
-        display: flex;
-        flex-direction: column ;
-        box-shadow: none;
-        color :#707070
-     
+ul.visa__doc {
+  list-style-type: square;
+  display: flex;
+  flex-direction: column;
+  box-shadow: none;
+  color: #707070;
+}
+
+
+.submit_con{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:90px 10px 10px 90px ;
 }

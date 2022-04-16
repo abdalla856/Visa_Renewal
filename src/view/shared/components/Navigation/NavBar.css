@@ -42,6 +42,15 @@ img {
   justify-content: flex-end;
 }
 
+.logout{
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+  background: transparent;
+  padding: 0.5rem;
+  font: inherit;
+  padding-top:14px
+}
 /* body {
 
 padding-top: 6px;

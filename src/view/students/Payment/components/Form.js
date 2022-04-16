@@ -1,55 +1,94 @@
 import React from "react";
-import { useForm } from "react-cool-form";
+// import { useForm } from "react-cool-form";
 import {
-  FormControl,
-  FormControlLabel,
+  // FormControl,
+  // FormControlLabel,
   FormLabel,
   InputLabel,
   TextField,
-  Select,
-  Checkbox,
+  // Select,
+  // Checkbox,
   Button,
-  Input,
+  // Input,
 } from "@material-ui/core";
+import { useDispatch } from "react-redux";
+import { uploadPayment } from "../../../../actions/apps";
+import { useContext } from "react";
+import { authCotext } from "../../../shared/context/auth-context";
+import { useHistory } from "react-router";
+
 import "./Form.css";
 const Form = (params) => {
-  const { form, use } = useForm({
-    defaultValues: { username: "", framework: "", fruit: [] },
-    onSubmit: (values) => console.log("onSubmit: ", values),
-  });
-  const errors = use("errors");
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const auth = useContext(authCotext);
+  console.log(auth.app);
+
+  const handlePayment = (e) => {
+    e.preventDefault();
+    var formData = new FormData();
+
+    var e_commerce = document.querySelector("#e-commerce");
+    var bank = document.querySelector("#bank");
+
+    try {
+      formData.append("ecomPayment", e_commerce.files[0]);
+      formData.append("bankPayment", bank.files[0]);
+      formData.append("payment_upload", true);
+      formData.append("payment", true);
+      // formData.append("payment", true);
+      dispatch(uploadPayment(auth.token, auth.app.id, formData));
+      history.push("/user");
+    } catch (err) {
+      alert(err.message);
+    }
+    alert("Created Succesfully");
+  };
 
   return (
-    <form className="form__to__apply" ref={form} noValidate>
-      <h1><FormLabel className="upload_label" component="legend">{params.name}</FormLabel></h1>
+    <form className="form__to__apply" onSubmit={handlePayment}>
+      <h1>
+        <FormLabel className="upload_label" component="legend">
+          {params.name}
+        </FormLabel>
+      </h1>
       <div className="container_visa">
         <div className="inputs">
-          {params.inputs.map((e, index) => {
-            if (index < 4)
-              return (
-                <React.Fragment>
-                  <InputLabel htmlFor={e.htmlFor}>{e.label}</InputLabel>
-                  <TextField name={e.name} type="file" />
-                </React.Fragment>
-              );
-          })}
+        {/* Ecom */}
+          <div>
+            <InputLabel htmlFor={"e-commerce"}>
+              Pay {auth.app.ecomPayment.amount}rm by using e-commerce
+            </InputLabel>
 
-          {/* <InputLabel htmlFor="picture">Passport Picture</InputLabel>
-      <TextField name="upload-photo" type="file"/> */}
-        </div>
-        <div className="inputs_2">
-          {params.inputs.map((e, index) => {
-            if (index > 4)
-              return (
-                <React.Fragment>
-                  <InputLabel htmlFor={e.htmlFor}>{e.label}</InputLabel>
-                  <TextField name={e.name} type="file" />
-                </React.Fragment>
-              );
-          })}
+            <TextField
+              required
+              name="e-commerce"
+              inputProps={{ accept: "application/pdf" }}
+              id="e-commerce"
+              type="file"
+              requried
+            />
+          <h6 className ="note_text">*please upload file in PDF format</h6>
 
-          {/* <InputLabel htmlFor="picture">Passport Picture</InputLabel>
-      <TextField name="upload-photo" type="file"/> */}
+          </div>
+          {/* Bank */}
+          <div>
+            <InputLabel htmlFor="bank">
+              Pay {auth.app.bankPayment.amount}rm using this bank number
+              XXXXXXXX .Maybank
+            </InputLabel>
+            <TextField
+              name="bank"
+              inputProps={{
+                accept: "file",
+              }}
+              id="bank"
+              type="file"
+              required
+            />
+          <h6 className ="note_text">*please upload file in PDF format</h6>
+
+          </div>
         </div>
       </div>
       <div className="button">
